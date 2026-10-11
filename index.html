@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Your Shop Name] | Premium Neighborhood Retail & Daily Essentials</title>
+  <meta name="description" content="Welcome to [Your Shop Name] - your trusted local retail shop for fresh daily groceries, artisanal pantry goods, organic produce, and handcrafted home lifestyle essentials. Visit us or order for same-day local pickup.">
+  <meta name="keywords" content="local retail shop, neighborhood store, fresh groceries, artisanal goods, local store pickup, handcrafted lifestyle">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" id="announcementBar">
+    <div class="container announcement-content">
+      <div class="announcement-left">
+        <span class="live-pill"><span class="pulse-dot"></span> Open Today: [08:30 AM – 09:00 PM]</span>
+        <span class="divider-dot">•</span>
+        <span class="announcement-text">🌿 Fresh Morning Batch Arrived & In Stock Today</span>
+      </div>
+      <div class="announcement-right">
+        <a href="tel:+919876543210" class="announcement-link" id="topPhoneLink">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          [Call Shop: +91 98765 43210]
+        </a>
+        <span class="divider-dot">•</span>
+        <span class="announcement-branch">📍 [Main Market Branch, City Center]</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Main Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="container header-container">
+      <!-- Store Brand / Logo -->
+      <a href="#" class="brand-logo" id="brandLogo" aria-label="[Your Shop Name] Home">
+        <div class="logo-mark">
+          <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">[Your Shop Name]</span>
+          <span class="brand-tagline">Retail & Local Market Goods</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#aisles" class="nav-link">Shop Aisles</a></li>
+          <li><a href="#specials" class="nav-link">Weekly Deals</a></li>
+          <li><a href="#why-local" class="nav-link">Why Shop Local</a></li>
+          <li><a href="#hours-location" class="nav-link">Store Hours & Map</a></li>
+          <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions (Search, Cart, Contact Button) -->
+      <div class="header-actions">
+        <!-- Live Quick Search Trigger -->
+        <div class="search-box-wrapper">
+          <div class="search-box">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="searchInput" placeholder="Search honey, bakery, groceries..." autocomplete="off" aria-label="Search retail products">
+            <button class="search-clear-btn" id="searchClearBtn" aria-label="Clear search">×</button>
+          </div>
+          <!-- Live Search Quick Dropdown -->
+          <div class="search-dropdown" id="searchDropdown"></div>
+        </div>
+
+        <!-- Cart Button -->
+        <button class="cart-trigger-btn" id="cartTriggerBtn" aria-label="View Shopping Basket">
+          <svg class="icon-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-text">Basket</span>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+
+        <!-- Call / WhatsApp Action Button (Desktop) -->
+        <a href="https://wa.me/919876543210?text=Hello%20[Shop%20Name],%20I%20would%20like%20to%20order..." target="_blank" rel="noopener" class="btn btn-outline btn-sm header-cta" id="headerWhatsappBtn">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          <span>Order on WhatsApp</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <span class="brand-title">[Your Shop Name]</span>
+        <span class="drawer-subtitle">Local Retail Boutique & Pantry</span>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close Menu">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <div class="drawer-search">
+        <input type="text" id="mobileSearchInput" placeholder="Search retail items..." aria-label="Search items">
+      </div>
+
+      <nav class="drawer-nav">
+        <ul>
+          <li><a href="#hero" class="drawer-link active"><span>🏡 Home</span></a></li>
+          <li><a href="#aisles" class="drawer-link"><span>🛒 Shop Aisles & Shelves</span></a></li>
+          <li><a href="#specials" class="drawer-link"><span>🎁 Weekly Deals & Bundles</span></a></li>
+          <li><a href="#why-local" class="drawer-link"><span>🤝 Why Shop Local With Us</span></a></li>
+          <li><a href="#hours-location" class="drawer-link"><span>📍 Store Hours & Directions</span></a></li>
+          <li><a href="#testimonials" class="drawer-link"><span>⭐ Customer Reviews</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="drawer-store-card">
+        <div class="drawer-status">
+          <span class="pulse-dot"></span> Store Open Today (8:30 AM – 9:00 PM)
+        </div>
+        <p class="drawer-address">📍 [Shop No. 14, Main Market, Near City Clock Tower, Your City]</p>
+        <div class="drawer-contact-btns">
+          <a href="tel:+919876543210" class="btn btn-primary btn-block">📞 [Call: +91 98765 43210]</a>
+          <a href="https://wa.me/919876543210" target="_blank" class="btn btn-outline btn-block">💬 WhatsApp Fast Order</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-icon">🌿</span>
+            <span>Your Friendly Neighborhood Retail Hub</span>
+          </div>
+          <h1 class="hero-title">
+            Fresh Local Essentials, Artisanal Pantry & Lifestyle Goods.
+          </h1>
+          <p class="hero-subtitle">
+            Welcome to <strong>[Your Shop Name]</strong>. We handpick top quality daily groceries, freshly baked goods, pantry staples, and handcrafted home items from trusted local producers—ready for quick in-store pickup or neighborhood delivery.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#aisles" class="btn btn-primary btn-lg" id="exploreAislesBtn">
+              <span>Explore Aisles</span>
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#hours-location" class="btn btn-secondary btn-lg" id="visitStoreBtn">
+              <span>Visit Our Shop</span>
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="hero-trust-metrics">
+            <div class="trust-metric-item">
+              <span class="metric-number">500+</span>
+              <span class="metric-label">Curated Items in Stock</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-metric-item">
+              <span class="metric-number">1 Hour</span>
+              <span class="metric-label">Free In-Store Pickup</span>
+            </div>
+            <div class="trust-divider"></div>
+            <div class="trust-metric-item">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Neighborhood Quality Trust</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrapper">
+            <img src="images/hero_storefront.jpg" alt="Warm interior of [Your Shop Name] local retail shop" class="hero-img" loading="eager">
+            
+            <!-- Floating Highlights on Hero Image -->
+            <div class="floating-badge badge-top-right">
+              <div class="badge-icon-circ">✓</div>
+              <div>
+                <strong>Fresh Daily Restock</strong>
+                <span>Direct from local growers</span>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-left">
+              <div class="badge-icon-circ">🛒</div>
+              <div>
+                <strong>Curbside Pickup</strong>
+                <span>Ready in [15–30 Mins]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Pillars / Benefit Ribbon -->
+    <section class="benefits-ribbon">
+      <div class="container benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h3 class="benefit-title">Verified Fresh & Authentic</h3>
+            <p class="benefit-desc">Hand-inspected daily products with transparent farm & artisan sourcing.</p>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h3 class="benefit-title">Same-Day Store Pickup</h3>
+            <p class="benefit-desc">Order online or via WhatsApp and collect your bag in under 60 minutes.</p>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h3 class="benefit-title">Local Neighborhood Care</h3>
+            <p class="benefit-desc">No corporate hassle. Personal recommendations from [Shop Owner Name] & staff.</p>
+          </div>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <div>
+            <h3 class="benefit-title">Easy Friendly Payments</h3>
+            <p class="benefit-desc">UPI, Cash on Pickup, Cards, or pay right at the shop counter.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Aisles & Catalog Section -->
+    <section class="aisles-section" id="aisles">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Shelf Highlights</div>
+          <h2 class="section-title">Explore What's in Our Store Today</h2>
+          <p class="section-subtitle">
+            Browse through daily essentials, handcrafted specialty pantry items, and artisanal lifestyle products currently on our shelves at <strong>[Your Shop Name]</strong>.
+          </p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="category-filters-container">
+          <div class="category-filters" id="categoryFilters" role="tablist" aria-label="Product Categories">
+            <button class="filter-tab active" data-category="all" role="tab" aria-selected="true">
+              <span class="tab-emoji">✨</span> All Aisles
+            </button>
+            <button class="filter-tab" data-category="pantry" role="tab" aria-selected="false">
+              <span class="tab-emoji">🍯</span> Pantry & Honey
+            </button>
+            <button class="filter-tab" data-category="bakery" role="tab" aria-selected="false">
+              <span class="tab-emoji">🥖</span> Artisan Bakery
+            </button>
+            <button class="filter-tab" data-category="produce" role="tab" aria-selected="false">
+              <span class="tab-emoji">🍎</span> Farm Produce
+            </button>
+            <button class="filter-tab" data-category="home" role="tab" aria-selected="false">
+              <span class="tab-emoji">☕</span> Ceramics & Lifestyle
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" id="productsGrid" aria-live="polite">
+          <!-- Dynamically populated via app.js -->
+        </div>
+
+        <!-- Store Pickup / Custom Order Box Banner -->
+        <div class="order-assistance-banner">
+          <div class="assistance-content">
+            <div class="assistance-icon">📦</div>
+            <div>
+              <h3>Can't find a specific grocery or brand on this list?</h3>
+              <p>We stock over 500+ items inside <strong>[Your Shop Name]</strong>. Send us your shopping list on WhatsApp or call our desk directly!</p>
+            </div>
+          </div>
+          <div class="assistance-actions">
+            <a href="https://wa.me/919876543210?text=Hi%20[Shop%20Name],%20I%20have%20a%20grocery%20list%20to%20order:" target="_blank" class="btn btn-primary" id="sendListBtn">
+              <span>Send Shopping List</span>
+              <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekly Spotlight & Specials Banner -->
+    <section class="specials-section" id="specials">
+      <div class="container">
+        <div class="special-feature-card">
+          <div class="special-content">
+            <span class="badge-special">🔥 [Weekend Neighborhood Special Offer]</span>
+            <h2 class="special-title">[Handpicked Artisan Breakfast & Pantry Basket]</h2>
+            <p class="special-desc">
+              Curated by <strong>[Shop Owner / Curator Name]</strong>: Includes 1 loaf of naturally leavened sourdough bread, 1 jar of raw wildflower forest honey, freshly ground local coffee beans, and heirloom fruit preserves.
+            </p>
+            
+            <div class="special-pricing">
+              <span class="current-price">[₹650]</span>
+              <span class="original-price">[₹820 Regular Price]</span>
+              <span class="discount-pill">Save 21%</span>
+            </div>
+
+            <!-- Interactive Deal Countdown Timer -->
+            <div class="deal-countdown" id="dealCountdown">
+              <div class="timer-box">
+                <span class="timer-value" id="hoursValue">08</span>
+                <span class="timer-unit">Hours</span>
+              </div>
+              <span class="timer-colon">:</span>
+              <div class="timer-box">
+                <span class="timer-value" id="minutesValue">42</span>
+                <span class="timer-unit">Minutes</span>
+              </div>
+              <span class="timer-colon">:</span>
+              <div class="timer-box">
+                <span class="timer-value" id="secondsValue">19</span>
+                <span class="timer-unit">Seconds</span>
+              </div>
+            </div>
+
+            <div class="special-actions">
+              <button class="btn btn-primary btn-lg" id="addBundleBtn">
+                <span>Reserve Bundle In-Store</span>
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+              </button>
+              <span class="special-stock-notice">⚠️ Only [7 Baskets Left] for today's batch</span>
+            </div>
+          </div>
+
+          <div class="special-media">
+            <img src="images/artisan_products.jpg" alt="Artisan basket at [Your Shop Name]" class="special-img" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Local / Store Values -->
+    <section class="why-local-section" id="why-local">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">The Local Difference</div>
+          <h2 class="section-title">Why Our Neighbors Love Shopping With Us</h2>
+          <p class="section-subtitle">
+            When you purchase at <strong>[Your Shop Name]</strong>, you are supporting independent farmers, small-batch bakers, and keeping our local neighborhood economy vibrant.
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-number">01</div>
+            <h3 class="value-title">Personal Care & Friendly Advice</h3>
+            <p class="value-desc">
+              Have dietary needs or looking for a recipe recommendation? [Shop Owner Name] and our store staff know every shelf and are always happy to help.
+            </p>
+            <ul class="value-points">
+              <li>✓ Custom item orders upon request</li>
+              <li>✓ Free sample tastings at the counter</li>
+            </ul>
+          </div>
+
+          <div class="value-card">
+            <div class="value-number">02</div>
+            <h3 class="value-title">Zero Artificial Preservatives</h3>
+            <p class="value-desc">
+              We vet every supplier. If it contains excessive synthetic additives, artificial fillers, or stale shelf agents, it doesn't enter our doors.
+            </p>
+            <ul class="value-points">
+              <li>✓ 100% Raw unprocessed honey</li>
+              <li>✓ Fresh stoneground flours and cold-pressed oils</li>
+            </ul>
+          </div>
+
+          <div class="value-card">
+            <div class="value-number">03</div>
+            <h3 class="value-title">Eco-Minded Neighborhood Care</h3>
+            <p class="value-desc">
+              Bring your own reusable totes, glass jars, or egg cartons. We offer discount credits for zero-waste shopping and plastic-free packaging.
+            </p>
+            <ul class="value-points">
+              <li>✓ Biodegradable shopping bags</li>
+              <li>✓ Direct local farm delivery routes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store Hours, Map & Visit Planner -->
+    <section class="hours-location-section" id="hours-location">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Visit Our Retail Store</div>
+          <h2 class="section-title">Store Hours & Easy Directions</h2>
+          <p class="section-subtitle">
+            Conveniently located in the heart of the community. Drop in for your daily essentials or pick up your pre-ordered bags in person!
+          </p>
+        </div>
+
+        <div class="location-layout">
+          <!-- Timing & Contact Info Card -->
+          <div class="store-details-card">
+            <div class="card-heading-box">
+              <h3 class="card-title">🕒 Weekly Store Hours</h3>
+              <span class="badge-status-live" id="liveStoreIndicator">
+                <span class="pulse-dot"></span> Open Today
+              </span>
+            </div>
+
+            <ul class="timing-list" id="timingList">
+              <li class="timing-row" data-day="monday">
+                <span class="day-name">Monday</span>
+                <span class="day-hours">[08:30 AM – 09:00 PM]</span>
+              </li>
+              <li class="timing-row" data-day="tuesday">
+                <span class="day-name">Tuesday</span>
+                <span class="day-hours">[08:30 AM – 09:00 PM]</span>
+              </li>
+              <li class="timing-row" data-day="wednesday">
+                <span class="day-name">Wednesday</span>
+                <span class="day-hours">[08:30 AM – 09:00 PM]</span>
+              </li>
+              <li class="timing-row" data-day="thursday">
+                <span class="day-name">Thursday</span>
+                <span class="day-hours">[08:30 AM – 09:00 PM]</span>
+              </li>
+              <li class="timing-row" data-day="friday">
+                <span class="day-name">Friday</span>
+                <span class="day-hours">[08:30 AM – 09:30 PM]</span>
+              </li>
+              <li class="timing-row" data-day="saturday">
+                <span class="day-name">Saturday</span>
+                <span class="day-hours">[08:00 AM – 09:30 PM]</span>
+              </li>
+              <li class="timing-row" data-day="sunday">
+                <span class="day-name">Sunday</span>
+                <span class="day-hours">[09:00 AM – 08:30 PM]</span>
+              </li>
+            </ul>
+
+            <div class="card-divider"></div>
+
+            <div class="contact-info-block">
+              <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <div>
+                  <strong>Store Address:</strong>
+                  <p id="storeAddressText">[Shop No. 14, Central Market Avenue, Near Town Clock, Your City, State, 110001]</p>
+                  <button class="text-action-btn" id="copyAddressBtn">📋 Copy Address</button>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">📞</div>
+                <div>
+                  <strong>Direct Counter Helpline:</strong>
+                  <p><a href="tel:+919876543210" class="hover-underline">[+91 98765 43210]</a> / <a href="tel:+919876543211" class="hover-underline">[+91 98765 43211]</a></p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon">✉️</div>
+                <div>
+                  <strong>Email Inquiries:</strong>
+                  <p><a href="mailto:contact@yourlocalshop.com" class="hover-underline">[hello@yourshopdomain.com]</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="store-buttons-grid">
+              <a href="https://maps.google.com/?q=[Shop+No.+14+Central+Market+Avenue]" target="_blank" rel="noopener" class="btn btn-primary" id="openMapsBtn">
+                <span>Open in Google Maps</span>
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="tel:+919876543210" class="btn btn-secondary" id="callCounterBtn">
+                <span>Call Store Front</span>
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive Interactive Store Locator / Map Visual -->
+          <div class="interactive-map-card">
+            <div class="map-visual-container">
+              <!-- Stylized Vector Map UI with Realistic Street Pattern -->
+              <div class="stylized-map" id="stylizedMap">
+                <div class="map-grid-lines"></div>
+                <div class="map-street map-street-main">
+                  <span class="street-label">[Central Market Avenue]</span>
+                </div>
+                <div class="map-street map-street-cross">
+                  <span class="street-label cross-label">[Clock Tower Road]</span>
+                </div>
+                <div class="map-park">
+                  <span class="park-label">🌳 [Neighborhood Community Park]</span>
+                </div>
+
+                <!-- Interactive Store Pin -->
+                <div class="store-pin-marker" id="storePin">
+                  <div class="pin-pulse"></div>
+                  <div class="pin-dot">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                  </div>
+                  <div class="pin-tooltip">
+                    <strong>[Your Shop Name]</strong>
+                    <span>Shop #14 (Parking Available Behind)</span>
+                  </div>
+                </div>
+
+                <div class="map-landmark landmark-1">
+                  <span>🏛️ [City Clock Tower]</span>
+                </div>
+                <div class="map-landmark landmark-2">
+                  <span>🅿️ [Customer Free Parking]</span>
+                </div>
+              </div>
+
+              <!-- Map Overlay Card -->
+              <div class="map-info-overlay">
+                <div class="overlay-row">
+                  <span class="overlay-badge">🚗 Parking</span>
+                  <span class="overlay-text">Dedicated customer parking in front & rear lane.</span>
+                </div>
+                <div class="overlay-row">
+                  <span class="overlay-badge">🚶 Landmark</span>
+                  <span class="overlay-text">200m from [City Metro / Clock Tower Stop].</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verified Customer Reviews -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-badge">Neighbor Feedback</div>
+          <h2 class="section-title">Loved by Local Residents & Families</h2>
+          <p class="section-subtitle">
+            See what our neighborhood regulars have to say about shopping at <strong>[Your Shop Name]</strong>.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "[Your Shop Name] has completely replaced our trips to big supermarket chains. The sourdough loaf and raw honey are unmatched in quality, and [Shop Owner Name] always greets us warmly by name!"
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">[AM]</div>
+              <div>
+                <strong>[Anita M.]</strong>
+                <span>Local Resident (Sector 4)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "I love using their WhatsApp order service. I just message what I need before leaving work, and my basket is packed and ready on the front counter when I arrive. Saves me 30 minutes every evening."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">[RK]</div>
+              <div>
+                <strong>[Rohit K.]</strong>
+                <span>Architect & Daily Shopper</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-quote">
+              "The ceramics and handmade lifestyle essentials make great gifts. It gives you the warm charm of an old-school general store with the cleanliness and elegance of a boutique."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">[PS]</div>
+              <div>
+                <strong>[Priya S.]</strong>
+                <span>Pastry Chef & Food Enthusiast</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community Club & Newsletter Signup -->
+    <section class="club-section">
+      <div class="container">
+        <div class="club-card">
+          <div class="club-content">
+            <span class="club-badge">🎁 [Neighborhood Privilege Club]</span>
+            <h2 class="club-title">Get 10% Off Your First In-Store Visit</h2>
+            <p class="club-desc">
+              Join the <strong>[Your Shop Name]</strong> neighborhood bulletin. Receive weekly fresh stock announcements, special seasonal harvest alerts, and member-only weekend tasting invitations.
+            </p>
+            <form class="club-form" id="newsletterForm">
+              <div class="form-group">
+                <input type="text" id="subscriberName" placeholder="Your Name" required aria-label="Your Name">
+                <input type="email" id="subscriberEmail" placeholder="Your Phone or Email" required aria-label="Your Phone or Email">
+                <button type="submit" class="btn btn-primary" id="clubSubmitBtn">
+                  <span>Claim 10% Voucher</span>
+                </button>
+              </div>
+              <small class="form-terms">🔒 No spam ever. We only send 1 update per week regarding fresh arrivals.</small>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Main Website Footer -->
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <!-- Col 1: Store Bio -->
+      <div class="footer-col col-brand">
+        <div class="footer-logo">
+          <div class="logo-mark">
+            <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 0 1-8 0"></path>
+            </svg>
+          </div>
+          <span class="footer-brand-title">[Your Shop Name]</span>
+        </div>
+        <p class="footer-about">
+          Your neighborhood corner destination for fresh organic produce, artisanal bakery items, raw pantry goods, and thoughtful lifestyle products. Proudly serving the community since [Year Established: e.g. 2018].
+        </p>
+        <div class="footer-social-links">
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Store Aisles</h4>
+        <ul class="footer-links">
+          <li><a href="#aisles" data-filter="pantry">Raw Honey & Pantry</a></li>
+          <li><a href="#aisles" data-filter="bakery">Artisan Sourdough Bakery</a></li>
+          <li><a href="#aisles" data-filter="produce">Fresh Local Produce</a></li>
+          <li><a href="#aisles" data-filter="home">Handcrafted Ceramics</a></li>
+          <li><a href="#specials">Weekend Gift Hampers</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Customer Care -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Services & Pickup</h4>
+        <ul class="footer-links">
+          <li><a href="#hours-location">Store Operating Hours</a></li>
+          <li><a href="#hours-location">Free 1-Hour Local Pickup</a></li>
+          <li><a href="https://wa.me/919876543210" target="_blank">Order via WhatsApp</a></li>
+          <li><a href="#why-local">Return & Freshness Guarantee</a></li>
+          <li><a href="#hours-location">Customer Parking Info</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Store Contact -->
+      <div class="footer-col col-contact">
+        <h4 class="footer-heading">Contact Counter</h4>
+        <p class="footer-address-line">
+          📍 [Shop No. 14, Central Market Avenue, Near Town Clock, Your City, State, 110001]
+        </p>
+        <p class="footer-contact-line">
+          📞 <strong>Phone:</strong> <a href="tel:+919876543210">[+91 98765 43210]</a>
+        </p>
+        <p class="footer-contact-line">
+          💬 <strong>WhatsApp:</strong> <a href="https://wa.me/919876543210">[+91 98765 43210]</a>
+        </p>
+        <p class="footer-contact-line">
+          ✉️ <strong>Email:</strong> [hello@yourshopdomain.com]
+        </p>
+        <div class="payment-badges-row">
+          <span class="pay-tag">💵 Cash</span>
+          <span class="pay-tag">📱 UPI / QR</span>
+          <span class="pay-tag">💳 Cards</span>
+          <span class="pay-tag">🏦 NetBanking</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-content">
+        <p>© 2026 <strong>[Your Shop Name]</strong>. All Rights Reserved. Built for modern local retail commerce.</p>
+        <div class="bottom-legal-links">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms of Service</a>
+          <span>•</span>
+          <a href="#">Store Policies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Shopping Basket Drawer -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Basket" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div class="cart-title-row">
+        <h3>🛒 Your Store Basket</h3>
+        <span class="cart-item-count" id="cartDrawerCount">0 items</span>
+      </div>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close Basket">✕</button>
+    </div>
+
+    <!-- Pickup / Delivery Selector -->
+    <div class="fulfillment-selector">
+      <button class="fulfillment-btn active" id="btnPickupOption" data-type="pickup">
+        <span class="f-icon">🏪</span>
+        <span>Store Pickup (Free)</span>
+      </button>
+      <button class="fulfillment-btn" id="btnDeliveryOption" data-type="delivery">
+        <span class="f-icon">🛵</span>
+        <span>Local Delivery</span>
+      </button>
+    </div>
+
+    <!-- Cart Items Scroll List -->
+    <div class="cart-drawer-items" id="cartItemsList">
+      <!-- Items dynamically populated via app.js -->
+      <div class="cart-empty-state" id="cartEmptyState">
+        <div class="empty-icon">🧺</div>
+        <h4>Your basket is currently empty</h4>
+        <p>Explore our aisles to pick fresh groceries, honey, bakery, or local goods.</p>
+        <button class="btn btn-outline" id="cartStartShoppingBtn">Browse Shelves</button>
+      </div>
+    </div>
+
+    <!-- Cart Footer & Checkout Summary -->
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-summary-line">
+        <span>Items Subtotal:</span>
+        <strong id="cartSubtotal">[₹0]</strong>
+      </div>
+      <div class="cart-summary-line">
+        <span id="fulfillmentLabel">Store Pickup (Shop #14):</span>
+        <span class="free-text" id="fulfillmentCost">FREE</span>
+      </div>
+      <div class="cart-total-line">
+        <span>Estimated Total:</span>
+        <strong class="total-price" id="cartGrandTotal">[₹0]</strong>
+      </div>
+
+      <!-- Action Buttons in Cart -->
+      <div class="cart-action-buttons">
+        <button class="btn btn-whatsapp btn-block" id="whatsappOrderBtn">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Send Order on WhatsApp</span>
+        </button>
+        <button class="btn btn-primary btn-block" id="reserveOrderBtn">
+          <span>Confirm & Collect In-Store</span>
+        </button>
+      </div>
+      <small class="cart-guarantee">✨ Pay when you collect at the store counter. No online advance needed.</small>
+    </div>
+  </aside>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="quick-view-modal" id="quickViewModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Details">✕</button>
+    <div class="modal-body" id="modalBody">
+      <!-- Injected by app.js -->
+    </div>
+  </div>
+
+  <!-- Mobile Bottom Sticky Bar (High UX Convenience on Phones) -->
+  <div class="mobile-bottom-bar" id="mobileBottomBar">
+    <a href="#hero" class="m-bottom-item" id="mBottomHome">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="#aisles" class="m-bottom-item" id="mBottomAisles">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span>Aisles</span>
+    </a>
+    <button class="m-bottom-item m-bottom-cart-btn" id="mBottomCart">
+      <div class="m-cart-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="m-cart-badge" id="mCartBadge">0</span>
+      </div>
+      <span>Basket</span>
+    </button>
+    <a href="tel:+919876543210" class="m-bottom-item" id="mBottomCall">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      <span>Call Shop</span>
+    </a>
+    <a href="#hours-location" class="m-bottom-item" id="mBottomDirections">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+      <span>Directions</span>
+    </a>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
